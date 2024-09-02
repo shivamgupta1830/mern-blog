@@ -2,12 +2,11 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import SignUp from "./pages/SignUp";
-import SingIn from "./pages/SignIn";
+import SignIn from "./pages/SignIn";
 import Projects from "./pages/Projects";
 import Error from "./pages/Error";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import { Button } from "flowbite-react";
 
 function App() {
   return (
@@ -34,12 +33,12 @@ const appRouter = createBrowserRouter([
       },
 
       {
-        path: "/sign-up",
+        path: "/signup",
         element: <SignUp />,
       },
       {
-        path: "/sign-in",
-        element: <SingIn />,
+        path: "/signin",
+        element: <SignIn />,
       },
       {
         path: "/dashboard",
