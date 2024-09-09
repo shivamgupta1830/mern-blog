@@ -5,6 +5,9 @@ import { errorHandler } from "../utils/error.js";
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
 
+  const userExist = await User.findOne({ email });
+  if (userExist) return next(errorHandler(400, "User already exists!"));
+
   if (
     !username ||
     !email ||
@@ -26,6 +29,7 @@ export const signup = async (req, res, next) => {
 
   try {
     await newUser.save();
+
     res.status(200).json({ message: "Signup successful" });
   } catch (error) {
     next(error);
