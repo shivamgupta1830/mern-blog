@@ -6,6 +6,7 @@ import SignIn from "./pages/SignIn";
 import Projects from "./pages/Projects";
 import Error from "./pages/Error";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Header />
 
       <Outlet />
+      <Footer />
     </div>
   );
 }
