@@ -8,6 +8,7 @@ import Error from "./pages/Error";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -44,7 +45,13 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <PrivateRoute />, // PrivateRoute checks authentication
+        children: [
+          {
+            path: "/dashboard",
+            element: <Dashboard />, // This will only render if authenticated
+          },
+        ],
       },
       {
         path: "/projects",
